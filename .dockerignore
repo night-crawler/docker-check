@@ -1,0 +1,12 @@
+client/.tmp/
+node_modules/
+.tmp/
+.git/
+.idea/
+.bumpversion.cfg
+.ash_history
+.cache
+**/__pycache__
+build
+dist
+docker_check.egg-info
