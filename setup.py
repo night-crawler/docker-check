@@ -2,8 +2,11 @@ from setuptools import setup, find_packages
 from docker_check import __version__
 
 
-with open('README.rst', 'r') as f:
-    long_description = f.read()
+try:
+    import pypandoc
+    long_description = pypandoc.convert('README.md', 'rst')
+except (IOError, ImportError):
+    long_description = ''
 
 
 setup(

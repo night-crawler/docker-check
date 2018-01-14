@@ -6,6 +6,7 @@ DOCKERIZED = bool(int(os.getenv('DOCKERIZED', 0) or 0))
 
 
 if DOCKERIZED:
+    # noinspection PyMethodMayBeStatic
     class InsideDockerTest:
         def test__has_dockerenv(self):
             assert checker.has_dockerenv() is True
@@ -18,6 +19,7 @@ if DOCKERIZED:
 
 
 if not DOCKERIZED:
+    # noinspection PyMethodMayBeStatic
     class OutsideDockerTest:
         def test__has_dockerenv(self):
             assert checker.has_dockerenv() is False
