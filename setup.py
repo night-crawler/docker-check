@@ -12,7 +12,7 @@ except (IOError, ImportError):
 setup(
     name='docker_check',
     version=__version__,
-    packages=find_packages(),
+    packages=find_packages(exclude=["tests*"]),
     url='https://github.com/night-crawler/docker-check',
     license='MIT',
     author='night-crawler',
