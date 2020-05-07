@@ -1,0 +1,6 @@
+include README.md
+include requirements-dev.txt
+include docker_build.sh
+include Dockerfile
+include pytest.ini
+recursive-include tests *.py
