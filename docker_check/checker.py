@@ -1,5 +1,5 @@
 import typing as t
-import os
+import os.path
 
 
 def has_dockerenv() -> bool:
@@ -7,6 +7,9 @@ def has_dockerenv() -> bool:
 
 
 def has_docker_in_proc_1_cgroup() -> t.Union[bool, None]:
+    if not os.path.exists('/proc/1/cgroup'):
+        return False
+
     with open('/proc/1/cgroup', 'r') as f:
         if 'docker' in f.read():
             return True
