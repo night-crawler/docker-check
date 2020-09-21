@@ -1,0 +1,7 @@
+FROM winamd64/python
+RUN pip install pytest
+ENV DOCKERIZED=1
+WORKDIR /application/docker-check
+ADD . /application/docker-check
+ENTRYPOINT ["pytest"]
+CMD ["/application/docker-check"]
